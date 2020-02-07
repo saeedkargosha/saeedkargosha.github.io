@@ -1,0 +1,3349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=980, user-scalable=yes" />
+
+    <style id="viewerMainStyle">
+        a,
+        abbr,
+        acronym,
+        address,
+        applet,
+        b,
+        big,
+        blockquote,
+        body,
+        button,
+        caption,
+        center,
+        cite,
+        code,
+        dd,
+        del,
+        dfn,
+        div,
+        dl,
+        dt,
+        em,
+        fieldset,
+        font,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        html,
+        i,
+        iframe,
+        img,
+        ins,
+        kbd,
+        label,
+        legend,
+        li,
+        nav,
+        object,
+        ol,
+        p,
+        pre,
+        q,
+        s,
+        samp,
+        section,
+        small,
+        span,
+        strike,
+        strong,
+        sub,
+        sup,
+        table,
+        tbody,
+        td,
+        tfoot,
+        th,
+        thead,
+        title,
+        tr,
+        tt,
+        u,
+        ul,
+        var {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            vertical-align: baseline;
+            background: 0 0
+        }
+
+        body {
+            font-size: 10px;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        input,
+        select,
+        textarea {
+            font-family: Helvetica, Arial, sans-serif;
+            box-sizing: border-box
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        blockquote,
+        q {
+            quotes: none
+        }
+
+        ins {
+            text-decoration: none
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none
+        }
+
+        body,
+        html {
+            height: 100%
+        }
+
+        body {
+            overflow-x: auto;
+            overflow-y: scroll
+        }
+
+        body.overflowHidden {
+            overflow: hidden
+        }
+
+        .testStyles {
+            overflow-y: hidden
+        }
+
+        .reset-button {
+            background: 0 0;
+            border: 0;
+            outline: 0;
+            color: inherit;
+            font: inherit;
+            line-height: normal;
+            overflow: visible;
+            padding: 0;
+            -webkit-appearance: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none
+        }
+
+        :focus {
+            outline: 0
+        }
+
+
+        .SITE_ROOT {
+            min-height: 100%;
+            position: relative;
+            margin: 0 auto
+        }
+
+        .POPUPS_ROOT {
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100%;
+            overflow-x: auto;
+            overflow-y: scroll;
+            position: fixed;
+            z-index: 99999
+        }
+
+        .POPUPS_ROOT.mobile {
+            z-index: 1005;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .POPUPS_ROOT.responsive .POPUPS_WRAPPER {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .POPUPS_ROOT:not(.responsive) .POPUPS_WRAPPER {
+            position: relative;
+            overflow: auto
+        }
+
+        .POPUPS_ROOT:not(.responsive) .POPUPS_WRAPPER>div {
+            margin: 0 auto
+        }
+
+        .auto-generated-link {
+            color: inherit
+        }
+
+        .warmup .hidden-on-warmup {
+            visibility: hidden
+        }
+
+        body:not([data-js-loaded]) [data-hide-prejs] {
+            visibility: hidden
+        }
+
+        html.device-phone body {
+            overflow-y: auto
+        }
+
+        html.device-mobile-optimized.device-android {
+            margin-bottom: 1px
+        }
+
+        html.device-mobile-optimized.blockSiteScrolling>body {
+            position: fixed;
+            width: 100%
+        }
+
+        html.device-mobile-optimized.media-zoom-mode>body {
+            touch-action: manipulation
+        }
+
+        html.device-mobile-optimized.media-zoom-mode>body>#SITE_CONTAINER {
+            height: 100%;
+            overflow: hidden
+        }
+
+        html.device-mobile-optimized.media-zoom-mode>body>#SITE_CONTAINER>.noop {
+            height: 100%
+        }
+
+        html.device-mobile-optimized.media-zoom-mode>body>#SITE_CONTAINER>.noop>.siteAspectsContainer {
+            height: 100%;
+            z-index: 1005
+        }
+
+        .siteAspectsContainer {
+            position: absolute;
+            top: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0
+        }
+
+        body.prewarmup #SITE_ROOT {
+            overflow-x: hidden;
+            overflow-y: hidden
+        }
+
+        body.device-mobile-optimized {
+            overflow-x: hidden;
+            overflow-y: scroll
+        }
+
+        body.device-mobile-optimized.qa-mode {
+            overflow-y: auto
+        }
+
+        body.device-mobile-optimized #SITE_CONTAINER {
+            width: 320px;
+            overflow-x: visible;
+            margin: 0 auto;
+            position: relative
+        }
+
+        body.device-mobile-optimized>* {
+            max-width: 100% !important
+        }
+
+        body.device-mobile-optimized .SITE_ROOT {
+            overflow-x: hidden;
+            overflow-y: hidden
+        }
+
+        body.device-mobile-non-optimized #SITE_CONTAINER>:not(.mobile-non-optimized-overflow) .SITE_ROOT {
+            overflow-x: hidden;
+            overflow-y: auto
+        }
+
+        body.device-mobile-non-optimized.fullScreenMode {
+            background-color: #5f6360
+        }
+
+        body.device-mobile-non-optimized.fullScreenMode #MOBILE_ACTIONS_MENU,
+        body.device-mobile-non-optimized.fullScreenMode #SITE_BACKGROUND,
+        body.device-mobile-non-optimized.fullScreenMode .SITE_ROOT {
+            visibility: hidden
+        }
+
+        body.fullScreenMode {
+            overflow-x: hidden !important;
+            overflow-y: hidden !important
+        }
+
+        body.fullScreenMode.device-mobile-optimized #TINY_MENU {
+            opacity: 0;
+            pointer-events: none
+        }
+
+        body.fullScreenMode-scrollable.device-mobile-optimized {
+            overflow-x: hidden !important;
+            overflow-y: auto !important
+        }
+
+        body.fullScreenMode-scrollable.device-mobile-optimized #masterPage,
+        body.fullScreenMode-scrollable.device-mobile-optimized .SITE_ROOT {
+            overflow-x: hidden !important;
+            overflow-y: hidden !important
+        }
+
+        body.fullScreenMode-scrollable.device-mobile-optimized #SITE_BACKGROUND,
+        body.fullScreenMode-scrollable.device-mobile-optimized #masterPage {
+            height: auto !important
+        }
+
+        body.fullScreenMode-scrollable.device-mobile-optimized #masterPage.mesh-layout {
+            height: 0 !important
+        }
+
+        .fullScreenOverlay {
+            z-index: 1005;
+            position: fixed;
+            left: 0;
+            top: -60px;
+            right: 0;
+            bottom: 0;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            overflow-y: hidden
+        }
+
+        .fullScreenOverlay>.fullScreenOverlayContent {
+            margin: 0 auto;
+            position: absolute;
+            right: 0;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0)
+        }
+
+        .mobile-actions-menu-wrapper {
+            z-index: 1000
+        }
+
+        body[contenteditable] {
+            overflow-x: auto;
+            overflow-y: auto
+        }
+
+        .bold {
+            font-weight: 700
+        }
+
+        .italic {
+            font-style: italic
+        }
+
+        .underline {
+            text-decoration: underline
+        }
+
+        .lineThrough {
+            text-decoration: line-through
+        }
+
+        .singleLineText {
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
+        .alignLeft {
+            text-align: left
+        }
+
+        .alignCenter {
+            text-align: center
+        }
+
+        .alignRight {
+            text-align: right
+        }
+
+        .alignJustify {
+            text-align: justify
+        }
+
+        ol.font_100,
+        ul.font_100 {
+            color: #080808;
+            font-family: 'Arial, Helvetica, sans-serif', serif;
+            font-size: 10px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            margin: 0;
+            text-decoration: none;
+            line-height: normal;
+            letter-spacing: normal
+        }
+
+        ol.font_100 li,
+        ul.font_100 li {
+            margin-bottom: 12px
+        }
+
+        letter {
+            position: relative;
+            display: inline-block
+        }
+
+        word {
+            display: inline-block;
+            white-space: nowrap
+        }
+
+        letter.space,
+        word.space {
+            display: inline
+        }
+
+
+        #popoverLayer {
+            z-index: 100
+        }
+
+
+        .flex_display {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex
+        }
+
+        .flex_vbox {
+            box-sizing: border-box;
+            padding-top: .01em;
+            padding-bottom: .01em
+        }
+
+
+        .singleLine {
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: normal
+        }
+
+        [data-z-counter] {
+            z-index: 0
+        }
+
+        [data-z-counter="0"] {
+            z-index: auto
+        }
+
+        .circle-preloader {
+            -webkit-animation: semi-rotate 1s 1ms linear infinite;
+            animation: semi-rotate 1s 1ms linear infinite;
+            height: 30px;
+            left: 50%;
+            margin-left: -15px;
+            margin-top: -15px;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+            width: 15px
+        }
+
+        .circle-preloader::before {
+            content: '';
+            top: 0;
+            left: 0;
+            right: -100%;
+            bottom: 0;
+            border: 3px solid currentColor;
+            border-color: currentColor transparent transparent currentColor;
+            border-radius: 50%;
+            position: absolute;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: inner-rotate .5s 1ms linear infinite alternate;
+            animation: inner-rotate .5s 1ms linear infinite alternate;
+            color: #7fccf7
+        }
+
+        .circle-preloader::after {
+            content: '';
+            top: 0;
+            left: 0;
+            right: -100%;
+            bottom: 0;
+            border: 3px solid currentColor;
+            border-color: currentColor transparent transparent currentColor;
+            border-radius: 50%;
+            position: absolute;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: inner-rotate .5s 1ms linear infinite alternate;
+            animation: inner-rotate .5s 1ms linear infinite alternate;
+            color: #3899ec;
+            opacity: 0
+        }
+
+        .circle-preloader.white::before {
+            color: #f0f0f0
+        }
+
+        .circle-preloader.white::after {
+            color: #dcdcdc
+        }
+
+        @-webkit-keyframes inner-rotate {
+            to {
+                opacity: 1;
+                -webkit-transform: rotate(115deg);
+                transform: rotate(115deg)
+            }
+        }
+
+        @keyframes inner-rotate {
+            to {
+                opacity: 1;
+                -webkit-transform: rotate(115deg);
+                transform: rotate(115deg)
+            }
+        }
+
+        @-webkit-keyframes semi-rotate {
+            from {
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg)
+            }
+
+            45% {
+                -webkit-transform: rotate(198deg);
+                transform: rotate(198deg)
+            }
+
+            55% {
+                -webkit-transform: rotate(234deg);
+                transform: rotate(234deg)
+            }
+
+            to {
+                -webkit-transform: rotate(540deg);
+                transform: rotate(540deg)
+            }
+        }
+
+        @keyframes semi-rotate {
+            from {
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg)
+            }
+
+            45% {
+                -webkit-transform: rotate(198deg);
+                transform: rotate(198deg)
+            }
+
+            55% {
+                -webkit-transform: rotate(234deg);
+                transform: rotate(234deg)
+            }
+
+            to {
+                -webkit-transform: rotate(540deg);
+                transform: rotate(540deg)
+            }
+        }
+
+        .hidden-comp-ghost-mode {
+            opacity: .5
+        }
+
+        .collapsed-comp-mode::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            background: -webkit-repeating-linear-gradient(135deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
+            background: repeating-linear-gradient(-45deg, transparent, transparent 49%, #2b5672 40%, #2b5672 40%, transparent 51%);
+            background-size: 6px 6px;
+            background-repeat: repeat
+        }
+
+        .g-transparent-a:link,
+        .g-transparent-a:visited {
+            border-color: transparent
+        }
+
+        .transitioning-comp * {
+            transition: inherit !important;
+            -webkit-transition: inherit !important
+        }
+
+        .selectionSharerContainer {
+            position: absolute;
+            background-color: #fff;
+            box-shadow: 0 4px 10px 0 rgba(57, 86, 113, .24);
+            width: 142px;
+            height: 45px;
+            border-radius: 100px;
+            text-align: center
+        }
+
+        .selectionSharerContainer:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 42%;
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: #fff transparent;
+            display: block;
+            width: 0
+        }
+
+        .selectionSharerContainer .selectionSharerOption {
+            display: inline-block;
+            cursor: pointer;
+            vertical-align: top;
+            padding: 13px 11px 11px 13px;
+            margin: 1px;
+            z-index: -1
+        }
+
+        .selectionSharerContainer .selectionSharerVerticalSeparator {
+            margin-top: 9px;
+            margin-bottom: 18px;
+            background-color: #eaf7ff;
+            height: 26px;
+            width: 1px;
+            display: inline-block
+        }
+
+
+        body.prewarmup .hidden-during-prewarmup {
+            visibility: visible;
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-rows: max-content max-content min-content max-content;
+            grid-template-rows: -webkit-max-content -webkit-max-content -webkit-min-content -webkit-max-content;
+            grid-template-rows: max-content max-content min-content max-content;
+            -ms-grid-columns: 100%;
+            grid-template-columns: 100%;
+            -webkit-box-align: start;
+            -webkit-align-items: start;
+            align-items: start;
+            -webkit-box-pack: stretch;
+            -webkit-justify-content: stretch;
+            justify-content: stretch
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #PAGES_CONTAINER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_FOOTER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_FOOTER-placeholder,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_HEADER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_HEADER-placeholder,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SOSP_CONTAINER_CUSTOM_ID[data-state~=mobileView],
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapAfterPagesContainer,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapBeforePagesContainer {
+            -ms-grid-column: 1;
+            -ms-grid-row-align: start;
+            -ms-grid-column-align: start
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_HEADER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_HEADER-placeholder {
+            -ms-grid-row: 1;
+            grid-area: 1/1/2/2
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SOSP_CONTAINER_CUSTOM_ID[data-state~=mobileView] {
+            -ms-grid-row: 2;
+            grid-area: 2/1/3/2
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #PAGES_CONTAINER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapAfterPagesContainer,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapBeforePagesContainer {
+            -ms-grid-row: 3;
+            grid-area: 3/1/4/2
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapAfterPagesContainer,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #soapBeforePagesContainer {
+            width: 100%
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #PAGES_CONTAINER {
+            -webkit-align-self: stretch;
+            align-self: stretch
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] main#PAGES_CONTAINER {
+            display: block
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_FOOTER,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_FOOTER-placeholder {
+            -ms-grid-row: 4;
+            grid-area: 4/1/5/2
+        }
+
+        #masterPage.mesh-layout[data-mesh-layout=grid] #PAGES_CONTAINERcenteredContent,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #PAGES_CONTAINERinlineContent,
+        #masterPage.mesh-layout[data-mesh-layout=grid] #SITE_PAGES {
+            height: 100%
+        }
+
+        #masterPage.mesh-layout.desktop>* {
+            width: 100%
+        }
+
+        #masterPage.mesh-layout #PAGES_CONTAINER,
+        #masterPage.mesh-layout #SITE_FOOTER,
+        #masterPage.mesh-layout #SITE_HEADER,
+        #masterPage.mesh-layout #SOSP_CONTAINER_CUSTOM_ID[data-state~=mobileView],
+        #masterPage.mesh-layout #masterPageinlineContent {
+            position: relative
+        }
+
+        #masterPage.mesh-layout #SITE_FOOTER-placeholder,
+        #masterPage.mesh-layout #SITE_HEADER-placeholder {
+            display: none
+        }
+
+        #masterPage.mesh-layout #SITE_HEADER[data-state~=fixedPosition]~#SITE_HEADER-placeholder {
+            display: block
+        }
+
+        #masterPage.mesh-layout #SITE_FOOTER[data-state~=fixedPosition]~#SITE_FOOTER-placeholder {
+            display: block
+        }
+
+        #masterPage.mesh-layout #SITE_PAGES {
+            height: auto;
+            position: relative
+        }
+
+        #SITE_ROOT img:not([src]) {
+            visibility: hidden
+        }
+
+        #SITE_ROOT svg img:not([src]) {
+            visibility: visible
+        }
+
+        tag-image {
+            display: block
+        }
+    </style>
+
+    <title>PROJECTS | Saeed Kargosha</title>
+
+    <meta property="og:title" content="PROJECTS | Saeed Kargosha" />
+    <meta property="og:site_name" content="Saeed Kargosha" />
+
+    <meta property="og:type" content="website" />
+
+</head>
+
+
+<body class="prewarmup">
+
+    <div id="SITE_CONTAINER">
+        <style type="text/css" data-styleid="uploadedFonts"></style>
+        <div>
+            <style type="text/css" data-styleid="theme_fonts">
+                .font_0 {
+                    font: normal normal normal 51px/1.1em helvetica-w01-bold, helvetica-w02-bold, helvetica-lt-w10-bold, sans-serif;
+                    color: #72AB00;
+                }
+
+                .font_1 {
+                    font: normal normal normal 14px/1.1em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    color: #494949;
+                }
+
+                .font_2 {
+                    font: normal normal normal 44px/1.1em helvetica-w01-roman, helvetica-w02-roman, helvetica-lt-w10-roman, sans-serif;
+                    color: #72AB00;
+                }
+
+                .font_3 {
+                    font: normal normal normal 70px/1.1em helvetica-w01-bold, helvetica-w02-bold, helvetica-lt-w10-bold, sans-serif;
+                    color: #494949;
+                }
+
+                .font_4 {
+                    font: normal normal normal 44px/1.3em helvetica-w01-roman, helvetica-w02-roman, helvetica-lt-w10-roman, sans-serif;
+                    color: #494949;
+                }
+
+                .font_5 {
+                    font: normal normal normal 25px/1.2em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    color: #494949;
+                }
+
+                .font_6 {
+                    font: normal normal normal 20px/1.3em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    color: #494949;
+                }
+
+                .font_7 {
+                    font: normal normal normal 17px/1.3em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    color: #494949;
+                }
+
+                .font_8 {
+                    font: normal normal normal 15px/1.3em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    color: #494949;
+                }
+
+                .font_9 {
+                    font: normal normal normal 12px/1.4em arial, 'ｍｓ ｐゴシック', 'ms pgothic', '돋움', dotum, helvetica, sans-serif;
+                    color: #494949;
+                }
+
+                .font_10 {
+                    font: normal normal normal 11px/1.3em Arial, 'ｍｓ ｐゴシック', 'ms pgothic', '돋움', dotum, helvetica, sans-serif;
+                    color: #494949;
+                }
+            </style>
+            <style type="text/css" data-styleid="theme_colors">
+                .color_0 {
+                    color: #F8F8F8;
+                }
+
+                .backcolor_0 {
+                    background-color: #F8F8F8;
+                }
+
+                .color_1 {
+                    color: #FFFFFF;
+                }
+
+                .backcolor_1 {
+                    background-color: #FFFFFF;
+                }
+
+                .color_2 {
+                    color: #000000;
+                }
+
+                .backcolor_2 {
+                    background-color: #000000;
+                }
+
+                .color_3 {
+                    color: #0088CB;
+                }
+
+                .backcolor_3 {
+                    background-color: #0088CB;
+                }
+
+                .color_4 {
+                    color: #FFCB05;
+                }
+
+                .backcolor_4 {
+                    background-color: #FFCB05;
+                }
+
+                .color_5 {
+                    color: #ED1C24;
+                }
+
+                .backcolor_5 {
+                    background-color: #ED1C24;
+                }
+
+                .color_6 {
+                    color: #888888;
+                }
+
+                .backcolor_6 {
+                    background-color: #888888;
+                }
+
+                .color_7 {
+                    color: #0089AD;
+                }
+
+                .backcolor_7 {
+                    background-color: #0089AD;
+                }
+
+                .color_8 {
+                    color: #FFFFFF;
+                }
+
+                .backcolor_8 {
+                    background-color: #FFFFFF;
+                }
+
+                .color_9 {
+                    color: #0089AD;
+                }
+
+                .backcolor_9 {
+                    background-color: #0089AD;
+                }
+
+                .color_10 {
+                    color: #00D7FE;
+                }
+
+                .backcolor_10 {
+                    background-color: #00D7FE;
+                }
+
+                .color_11 {
+                    color: #FFFFFF;
+                }
+
+                .backcolor_11 {
+                    background-color: #FFFFFF;
+                }
+
+                .color_12 {
+                    color: #F8F8F8;
+                }
+
+                .backcolor_12 {
+                    background-color: #F8F8F8;
+                }
+
+                .color_13 {
+                    color: #9A9A9A;
+                }
+
+                .backcolor_13 {
+                    background-color: #9A9A9A;
+                }
+
+                .color_14 {
+                    color: #494949;
+                }
+
+                .backcolor_14 {
+                    background-color: #494949;
+                }
+
+                .color_15 {
+                    color: #000000;
+                }
+
+                .backcolor_15 {
+                    background-color: #000000;
+                }
+
+                .color_16 {
+                    color: #D6EAAF;
+                }
+
+                .backcolor_16 {
+                    background-color: #D6EAAF;
+                }
+
+                .color_17 {
+                    color: #BDD58E;
+                }
+
+                .backcolor_17 {
+                    background-color: #BDD58E;
+                }
+
+                .color_18 {
+                    color: #A0C060;
+                }
+
+                .backcolor_18 {
+                    background-color: #A0C060;
+                }
+
+                .color_19 {
+                    color: #72AB00;
+                }
+
+                .backcolor_19 {
+                    background-color: #72AB00;
+                }
+
+                .color_20 {
+                    color: #395500;
+                }
+
+                .backcolor_20 {
+                    background-color: #395500;
+                }
+
+                .color_21 {
+                    color: #FFEBAA;
+                }
+
+                .backcolor_21 {
+                    background-color: #FFEBAA;
+                }
+
+                .color_22 {
+                    color: #FFE180;
+                }
+
+                .backcolor_22 {
+                    background-color: #FFE180;
+                }
+
+                .color_23 {
+                    color: #FFC400;
+                }
+
+                .backcolor_23 {
+                    background-color: #FFC400;
+                }
+
+                .color_24 {
+                    color: #AA8200;
+                }
+
+                .backcolor_24 {
+                    background-color: #AA8200;
+                }
+
+                .color_25 {
+                    color: #554100;
+                }
+
+                .backcolor_25 {
+                    background-color: #554100;
+                }
+
+                .color_26 {
+                    color: #AAE2FF;
+                }
+
+                .backcolor_26 {
+                    background-color: #AAE2FF;
+                }
+
+                .color_27 {
+                    color: #7FD4FF;
+                }
+
+                .backcolor_27 {
+                    background-color: #7FD4FF;
+                }
+
+                .color_28 {
+                    color: #00A9FF;
+                }
+
+                .backcolor_28 {
+                    background-color: #00A9FF;
+                }
+
+                .color_29 {
+                    color: #0071A9;
+                }
+
+                .backcolor_29 {
+                    background-color: #0071A9;
+                }
+
+                .color_30 {
+                    color: #003854;
+                }
+
+                .backcolor_30 {
+                    background-color: #003854;
+                }
+
+                .color_31 {
+                    color: #EFAB9F;
+                }
+
+                .backcolor_31 {
+                    background-color: #EFAB9F;
+                }
+
+                .color_32 {
+                    color: #E08170;
+                }
+
+                .backcolor_32 {
+                    background-color: #E08170;
+                }
+
+                .color_33 {
+                    color: #D11F00;
+                }
+
+                .backcolor_33 {
+                    background-color: #D11F00;
+                }
+
+                .color_34 {
+                    color: #8B1400;
+                }
+
+                .backcolor_34 {
+                    background-color: #8B1400;
+                }
+
+                .color_35 {
+                    color: #450A00;
+                }
+
+                .backcolor_35 {
+                    background-color: #450A00;
+                }
+            </style>
+        </div>
+        <div id="CSS_CONTAINER"></div>
+        <div data-aid="stylesContainer">
+            <style type="text/css" data-styleid="c1">
+                .c1bg {
+                    border: 1px solid rgba(154, 154, 154, 0.46);
+                    background-color: rgba(248, 248, 248, 1);
+                    border-radius: 5px;
+                }
+
+                .c1inlineContent,
+                .c1bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            </style>
+            <style type="text/css" data-styleid="ddm3">
+                .ddm3itemsContainer {
+                    width: calc(100% - 0px);
+                    height: calc(100% - 0px);
+                    white-space: nowrap;
+                    display: inline-block;
+                    overflow: visible;
+                    position: absolute;
+                }
+
+                .ddm3moreContainer {
+                    overflow: visible;
+                    display: inherit;
+                    white-space: nowrap;
+                    width: auto;
+                }
+
+                .ddm3dropWrapper {
+                    z-index: 99999;
+                    display: block;
+                    opacity: 1;
+                    visibility: hidden;
+                    position: absolute;
+                    margin-top: 7px;
+                    padding: 15px 5px 0 5px;
+                    background-color: rgba(0, 0, 0, 1);
+                    border-radius: 0;
+                }
+
+                .ddm3>nav {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .ddm3[data-dropmode="dropUp"] .ddm3dropWrapper {
+                    margin-top: 0;
+                    margin-bottom: 7px;
+                }
+
+                .ddm3repeaterButton {
+                    height: 100%;
+                    position: relative;
+                    box-sizing: border-box;
+                    display: inline-block;
+                }
+
+                .ddm3repeaterButton[data-state~="header"] a,
+                .ddm3repeaterButton[data-state~="header"] div {
+                    cursor: default !important;
+                }
+
+                .ddm3repeaterButtonlinkElement {
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .ddm3repeaterButton_gapper {
+                    padding: 0 5px;
+                }
+
+                .ddm3repeaterButton_wrapper {
+                    cursor: pointer;
+                    font: normal normal normal 14px/1.1em helvetica-w01-light, helvetica-w02-light, sans-serif;
+                    border-top: 1px solid rgba(154, 154, 154, 1);
+                }
+
+                .ddm3repeaterButtonlabel {
+                    color: #9A9A9A;
+                    display: inline-block;
+                    padding: 8px;
+                }
+
+                .ddm3repeaterButton[data-listposition="left"] {
+                    padding-left: 0;
+                }
+
+                .ddm3repeaterButton[data-listposition="right"] {
+                    padding-right: 0;
+                }
+
+                .ddm3repeaterButton[data-state~="drop"] {
+                    width: 100%;
+                    display: block;
+                }
+
+                .ddm3repeaterButton[data-state~="over"] .ddm3repeaterButton_wrapper,
+                .ddm3repeaterButton[data-preview~="hover"] .ddm3repeaterButton_wrapper {
+                    border-top-width: 4px;
+                    border-top-color: rgba(114, 171, 0, 1);
+                }
+
+                .ddm3repeaterButton[data-state~="over"] .ddm3repeaterButtonlabel,
+                .ddm3repeaterButton[data-preview~="hover"] .ddm3repeaterButtonlabel {
+                    color: #72AB00;
+                    display: inline-block;
+                    padding-top: 5px;
+                }
+
+                .ddm3repeaterButton[data-state~="selected"] .ddm3repeaterButton_wrapper,
+                .ddm3repeaterButton[data-preview~="active"] .ddm3repeaterButton_wrapper {
+                    border-top-width: 4px;
+                    border-top-color: rgba(114, 171, 0, 1);
+                }
+
+                .ddm3repeaterButton[data-state~="selected"] .ddm3repeaterButtonlabel,
+                .ddm3repeaterButton[data-preview~="active"] .ddm3repeaterButtonlabel {
+                    color: #72AB00;
+                    display: inline-block;
+                    padding-top: 5px;
+                }
+            </style>
+            <style type="text/css" data-styleid="hl1">
+                .hl1 {
+                    box-sizing: border-box;
+                    border-top: 1px solid rgba(154, 154, 154, 0.45);
+                    height: 0;
+                }
+            </style>
+            <style type="text/css" data-styleid="fc1">
+                .fc1screenWidthBackground {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .fc1[data-state~="fixedPosition"] {
+                    position: fixed !important;
+                    left: auto !important;
+                    z-index: 50;
+                }
+
+                .fc1[data-state~="fixedPosition"].fc1_footer {
+                    top: auto;
+                    bottom: 0;
+                }
+
+                .fc1bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .fc1inlineContent {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .fc1centeredContent {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            </style>
+            <style type="text/css" data-styleid="siteBackground">
+                .siteBackground {
+                    width: 100%;
+                    position: absolute;
+                }
+
+                .siteBackgroundbgBeforeTransition {
+                    position: absolute;
+                    top: 0;
+                }
+
+                .siteBackgroundbgAfterTransition {
+                    position: absolute;
+                    top: 0;
+                }
+            </style>
+            <style type="text/css" data-styleid="hc2">
+                .hc2screenWidthBackground {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .hc2[data-state~="fixedPosition"] {
+                    position: fixed !important;
+                    left: auto !important;
+                    z-index: 50;
+                }
+
+                .hc2[data-state~="fixedPosition"].hc2_footer {
+                    top: auto;
+                    bottom: 0;
+                }
+
+                .hc2_bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 1);
+                    border-top: 0px solid rgba(114, 171, 0, 1);
+                    border-bottom: 2px solid rgba(114, 171, 0, 1);
+                }
+
+                .hc2bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .hc2[data-state~="mobileView"] .hc2bg {
+                    left: 10px;
+                    right: 10px;
+                }
+
+                .hc2_bg-center {
+                    position: absolute;
+                    top: 0px;
+                    right: 0;
+                    bottom: 2px;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 1);
+                    border-radius: 0;
+                }
+
+                .hc2inlineContent {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .hc2centeredContent {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            </style>
+            <style type="text/css" data-styleid="wp2">
+                .wp2_zoomedin {
+                    cursor: url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;
+                    overflow: hidden;
+                    display: block;
+                }
+
+                .wp2_zoomedout {
+                    cursor: url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;
+                }
+
+                .wp2link {
+                    display: block;
+                    overflow: hidden;
+                }
+
+                .wp2img {
+                    overflow: hidden;
+                }
+
+                .wp2[data-is-responsive=true] .wp2link,
+                .wp2[data-is-responsive=true] .wp2img,
+                .wp2[data-is-responsive=true] tag-image {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .wp2imgimage {
+                    position: static;
+                    box-shadow: #000 0 0 0;
+                    user-select: none;
+                }
+            </style>
+            <style type="text/css" data-styleid="txtNew">
+                .txtNew {
+                    word-wrap: break-word;
+                    text-align: start;
+                }
+
+                .txtNew_override-left * {
+                    text-align: left !important;
+                }
+
+                .txtNew_override-right * {
+                    text-align: right !important;
+                }
+
+                .txtNew_override-center * {
+                    text-align: center !important;
+                }
+
+                .txtNew_override-justify * {
+                    text-align: justify !important;
+                }
+
+                .txtNew>* {
+                    pointer-events: auto;
+                }
+
+                .txtNew li {
+                    font-style: inherit;
+                    font-weight: inherit;
+                    line-height: inherit;
+                    letter-spacing: normal;
+                }
+
+                .txtNew ol,
+                .txtNew ul {
+                    padding-left: 1.3em;
+                    padding-right: 0;
+                    margin-left: 0.5em;
+                    margin-right: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew ul {
+                    list-style-type: disc;
+                }
+
+                .txtNew ol {
+                    list-style-type: decimal;
+                }
+
+                .txtNew ul ul,
+                .txtNew ol ul {
+                    list-style-type: circle;
+                }
+
+                .txtNew ul ul ul,
+                .txtNew ol ul ul {
+                    list-style-type: square;
+                }
+
+                .txtNew ul ol ul,
+                .txtNew ol ol ul {
+                    list-style-type: square;
+                }
+
+                .txtNew ul[dir="rtl"],
+                .txtNew ol[dir="rtl"] {
+                    padding-left: 0;
+                    padding-right: 1.3em;
+                    margin-left: 0;
+                    margin-right: 0.5em;
+                }
+
+                .txtNew ul[dir="rtl"] ul,
+                .txtNew ul[dir="rtl"] ol,
+                .txtNew ol[dir="rtl"] ul,
+                .txtNew ol[dir="rtl"] ol {
+                    padding-left: 0;
+                    padding-right: 1.3em;
+                    margin-left: 0;
+                    margin-right: 0.5em;
+                }
+
+                .txtNew p {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h1 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h2 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h3 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h4 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h5 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew h6 {
+                    margin: 0;
+                    line-height: normal;
+                    letter-spacing: normal;
+                }
+
+                .txtNew a {
+                    color: inherit;
+                }
+            </style>
+            <style type="text/css" data-styleid="p2">
+                .p2bg {
+                    overflow: hidden;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgba(255, 255, 255, 0.32);
+                }
+
+                .p2[data-state~="mobileView"] .p2bg {
+                    left: 10px;
+                    right: 10px;
+                }
+
+                .p2inlineContent {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    bottom: 20px;
+                }
+            </style>
+            <style type="text/css" data-styleid="style-k5qo2ux9">
+                .style-k5qo2ux9_zoomedin {
+                    cursor: url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_out.png), url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_out.cur), auto;
+                    overflow: hidden;
+                    display: block;
+                }
+
+                .style-k5qo2ux9_zoomedout {
+                    cursor: url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_in.png), url(https://static.parastorage.com/services/skins/2.1229.80/images/wysiwyg/core/themes/base/cursor_zoom_in.cur), auto;
+                }
+
+                .style-k5qo2ux9link {
+                    display: block;
+                    overflow: hidden;
+                }
+
+                .style-k5qo2ux9img {
+                    overflow: hidden;
+                }
+
+                .style-k5qo2ux9[data-is-responsive=true] .style-k5qo2ux9link,
+                .style-k5qo2ux9[data-is-responsive=true] .style-k5qo2ux9img,
+                .style-k5qo2ux9[data-is-responsive=true] tag-image {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                .style-k5qo2ux9imgimage {
+                    position: static;
+                    box-shadow: #000 0 0 0;
+                    user-select: none;
+                }
+            </style>
+        </div>
+        <div class="noop visual-focus-on" style="position:relative">
+            <div id="SCROLL_TO_TOP" tabindex="-1" aria-label="top of page" role="region" style="height:0"></div>
+            <div id="FONTS_CONTAINER"></div>
+            <div id="SITE_BACKGROUND"
+                style="height:100%;top:50px;min-height:calc(100vh - 50px);bottom:;left:;right:;position:"
+                class="siteBackground">
+                <div id="SITE_BACKGROUND_previous_noPrev" data-position="absolute" data-align="" data-fitting=""
+                    class="siteBackgroundprevious">
+                    <div id="SITE_BACKGROUNDpreviousImage" class="siteBackgroundpreviousImage"></div>
+                    <div id="SITE_BACKGROUNDpreviousVideo" class="siteBackgroundpreviousVideo"></div>
+                    <div id="SITE_BACKGROUND_previousOverlay_noPrev" class="siteBackgroundpreviousOverlay"></div>
+                </div>
+                <div id="SITE_BACKGROUND_current_customBgImgx31"
+                    style="top:0;height:100%;width:100%;background-color:rgba(255, 255, 255, 1);display:;position:absolute"
+                    data-position="absolute" data-align="top" data-fitting="legacy_tile" class="siteBackgroundcurrent">
+                    <div id="SITE_BACKGROUND_currentImage_customBgImgx31"
+                        style="position:absolute;top:0;height:100%;width:100%" data-type="bgimage" data-height="100%"
+                        class="siteBackgroundcurrentImage"></div>
+                    <div id="SITE_BACKGROUNDcurrentVideo" class="siteBackgroundcurrentVideo"></div>
+                    <div id="SITE_BACKGROUND_currentOverlay_customBgImgx31"
+                        style="position:absolute;top:0;width:100%;height:100%" class="siteBackgroundcurrentOverlay">
+                    </div>
+                </div>
+            </div>
+            <div id="SITE_ROOT" class="SITE_ROOT" style="width:100%;min-width:980px;padding-bottom:0;top:0px"
+                aria-hidden="false">
+                <div id="masterPage" class="mesh-layout" data-mesh-layout="grid">
+                    <header data-is-mobile="false" data-state="transition-allowed" data-site-width="980"
+                        data-header-top="0"
+                        style="position:relative;margin-top:0;left:0;margin-left:0;width:100%;min-width:980px;top:;bottom:;right:"
+                        class="hc2" id="SITE_HEADER">
+                        <div style="left:0;width:100%" id="SITE_HEADERscreenWidthBackground"
+                            class="hc2screenWidthBackground">
+                            <div class="hc2_bg"></div>
+                        </div>
+                        <div id="SITE_HEADERcenteredContent" class="hc2centeredContent">
+                            <div style="margin-left:calc((100% - 980px) / 2);width:980px" id="SITE_HEADERbg"
+                                class="hc2bg">
+                                <div class="hc2_bg-center"></div>
+                            </div>
+                            <div id="SITE_HEADERinlineContent" class="hc2inlineContent">
+                                <style id="SITE_HEADER-mesh-styles">
+                                    #SITE_HEADERinlineContent {
+                                        height: auto;
+                                        width: 100%;
+                                        position: relative;
+                                    }
+
+                                    #SITE_HEADERinlineContent-gridWrapper {
+                                        pointer-events: none;
+                                    }
+
+                                    #SITE_HEADERinlineContent-gridContainer {
+                                        position: static;
+                                        display: grid;
+                                        height: auto;
+                                        width: 100%;
+                                        min-height: auto;
+                                        grid-template-rows: min-content min-content 1fr;
+                                        grid-template-columns: 100%;
+                                    }
+
+                                    #WRchTxt3 {
+                                        position: relative;
+                                        margin: 24px 0px 10px calc((100% - 980px) * 0.5);
+                                        left: 27px;
+                                        grid-area: 1 / 1 / 2 / 2;
+                                        justify-self: start;
+                                        align-self: start;
+                                    }
+
+                                    #DrpDwnMn0 {
+                                        position: relative;
+                                        margin: 0px 0px 16px calc((100% - 980px) * 0.5);
+                                        left: 293px;
+                                        grid-area: 3 / 1 / 4 / 2;
+                                        justify-self: start;
+                                        align-self: start;
+                                    }
+
+                                    #SITE_HEADERinlineContent-wedge-3 {
+                                        visibility: hidden;
+                                        height: 211px;
+                                        width: 0;
+                                        grid-area: 1 / 1 / 3 / 2;
+                                    }
+
+                                    #SITE_HEADERcenteredContent {
+                                        position: relative;
+                                    }
+
+                                    #SITE_HEADERinlineContent-gridContainer>* {
+                                        pointer-events: auto;
+                                    }
+
+                                    #SITE_HEADERinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                        pointer-events: none;
+                                    }
+
+                                    #SITE_HEADERinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                        pointer-events: auto;
+                                    }
+                                </style>
+                                <div id="SITE_HEADERinlineContent-gridWrapper" data-mesh-internal="true">
+                                    <div id="SITE_HEADERinlineContent-gridContainer" data-mesh-internal="true">
+                                        <div data-packed="true"
+                                            style="top:;bottom:;left:;right:;width:371px;height:auto;position:;pointer-events:none"
+                                            class="txtNew" id="WRchTxt3">
+                                            <h1 class="font_0"><a href=""
+                                                    target="_self">​​​</a>​<span style="font-size:43px;">Saeed<a
+                                                        href=""
+                                                        target="_self">&nbsp;<span
+                                                            style="color:rgb(154, 154, 154);">Kargosha</span></a></span>
+                                            </h1>
+
+                                            <h6 class="font_6"><a href=""
+                                                    target="_self"><span class="color_19">Web and Mobile
+                                                        Developer</span></a></h6>
+                                        </div>
+                                        <div id="DrpDwnMn0" class="hidden-during-prewarmup ddm3"
+                                            style="overflow-x:hidden;top:;bottom:;left:;right:;width:687px;height:22px;position:"
+                                            data-stretch-buttons-to-menu-width="false" data-same-width-buttons="true"
+                                            data-num-items="4" data-menuborder-y="0" data-menubtn-border="0"
+                                            data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0"
+                                            data-drophposition="" data-dropalign="right" dir="ltr"
+                                            data-state="right notMobile">
+                                            <nav aria-label="Site" id="DrpDwnMn0navContainer" class="ddm3navContainer">
+                                                <ul style="text-align:right" id="DrpDwnMn0itemsContainer"
+                                                    class="ddm3itemsContainer">
+                                                    <li data-direction="ltr" data-listposition="center"
+                                                        data-data-id="bmi0" class="ddm3repeaterButton"
+                                                        data-state="menu  idle link notMobile" id="DrpDwnMn00"><a
+                                                            data-listposition="center" aria-haspopup="false"
+                                                            href="http://saeedkargosha.github.io"
+                                                            target="_self" id="DrpDwnMn00linkElement"
+                                                            class="ddm3repeaterButtonlinkElement">
+                                                            <div class="ddm3repeaterButton_gapper">
+                                                                <div class="ddm3repeaterButton_wrapper">
+                                                                    <div style="text-align:center" id="DrpDwnMn00bg"
+                                                                        class="ddm3repeaterButtonbg">
+                                                                        <p style="text-align:center"
+                                                                            id="DrpDwnMn00label"
+                                                                            class="ddm3repeaterButtonlabel">HOME</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a></li>
+                                                    <li data-direction="ltr" data-listposition="center"
+                                                        data-data-id="bmi1" class="ddm3repeaterButton"
+                                                        data-state="menu  idle link notMobile" id="DrpDwnMn01"><a
+                                                            data-listposition="center" aria-haspopup="false"
+                                                            href="http://saeedkargosha.github.io/cv"
+                                                            target="_self" id="DrpDwnMn01linkElement"
+                                                            class="ddm3repeaterButtonlinkElement">
+                                                            <div class="ddm3repeaterButton_gapper">
+                                                                <div class="ddm3repeaterButton_wrapper">
+                                                                    <div style="text-align:center" id="DrpDwnMn01bg"
+                                                                        class="ddm3repeaterButtonbg">
+                                                                        <p style="text-align:center"
+                                                                            id="DrpDwnMn01label"
+                                                                            class="ddm3repeaterButtonlabel">CV</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a></li>
+                                                    <li data-direction="ltr" data-listposition="center"
+                                                        data-data-id="bmi2" class="ddm3repeaterButton"
+                                                        data-state="menu selected idle link notMobile" id="DrpDwnMn02">
+                                                        <a data-listposition="center" aria-haspopup="false"
+                                                            href="http://saeedkargosha.github.io/projects"
+                                                            target="_self" id="DrpDwnMn02linkElement"
+                                                            class="ddm3repeaterButtonlinkElement">
+                                                            <div class="ddm3repeaterButton_gapper">
+                                                                <div class="ddm3repeaterButton_wrapper">
+                                                                    <div style="text-align:center" id="DrpDwnMn02bg"
+                                                                        class="ddm3repeaterButtonbg">
+                                                                        <p style="text-align:center"
+                                                                            id="DrpDwnMn02label"
+                                                                            class="ddm3repeaterButtonlabel">PROJECTS</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a></li>
+                                                </ul>
+                                                <div id="DrpDwnMn0moreButton" class="ddm3moreButton"></div>
+                                                <div style="visibility:hidden" data-drophposition=""
+                                                    data-dropalign="right" id="DrpDwnMn0dropWrapper"
+                                                    class="ddm3dropWrapper">
+                                                    <ul style="visibility:hidden" id="DrpDwnMn0moreContainer"
+                                                        class="ddm3moreContainer"></ul>
+                                                </div>
+                                            </nav>
+                                        </div>
+                                        <div id="SITE_HEADERinlineContent-wedge-3" data-mesh-internal="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <main tabindex="-1" data-is-mobile="false" data-is-mesh="true" data-site-width="980"
+                        style="left:0;margin-left:0;width:100%;min-width:980px;top:0;bottom:;right:;position:"
+                        class="fc1" data-state="" id="PAGES_CONTAINER">
+                        <div style="left:0" id="PAGES_CONTAINERscreenWidthBackground" class="fc1screenWidthBackground">
+                        </div>
+                        <div style="position:relative" id="PAGES_CONTAINERcenteredContent" class="fc1centeredContent">
+                            <div style="display:none" id="PAGES_CONTAINERbg" class="fc1bg"></div>
+                            <div style="position:relative" id="PAGES_CONTAINERinlineContent" class="fc1inlineContent">
+                                <div style="width:100%">
+                                    <div data-ismobile="false" data-is-mesh-layout="true"
+                                        style="height:100%;left:0;position:relative;top:;bottom:;right:" class="p2"
+                                        id="c24sk">
+                                        <div style="margin-left:calc((100% - 980px) / 2);width:980px" id="c24skbg"
+                                            class="p2bg"></div>
+                                        <div class="p2inlineContent" id="c24skinlineContent">
+                                            <style id="c24sk-mesh-styles">
+                                                #c24skinlineContent {
+                                                    height: auto;
+                                                    width: 100%;
+                                                    position: relative;
+                                                }
+
+                                                #c24skinlineContent-gridWrapper {
+                                                    pointer-events: none;
+                                                }
+
+                                                #c24skinlineContent-gridContainer {
+                                                    position: static;
+                                                    display: grid;
+                                                    height: auto;
+                                                    width: 100%;
+                                                    min-height: 1420px;
+                                                    grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content min-content 1fr;
+                                                    grid-template-columns: 100%;
+                                                    padding-bottom: 20px;
+                                                    box-sizing: border-box;
+                                                }
+
+                                                #Cntnr6 {
+                                                    position: relative;
+                                                    margin: 52px 0px 10px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 1 / 1 / 2 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #WRchTxtn {
+                                                    position: relative;
+                                                    margin: 0px 0px 11px calc((100% - 980px) * 0.5);
+                                                    left: 28px;
+                                                    grid-area: 3 / 1 / 4 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #FvGrdLn1 {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 4 / 1 / 5 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #Cntnr5 {
+                                                    position: relative;
+                                                    margin: 5px 0px 35px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 5 / 1 / 6 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #WRchTxte {
+                                                    position: relative;
+                                                    margin: 0px 0px 30px calc((100% - 980px) * 0.5);
+                                                    left: 171px;
+                                                    grid-area: 5 / 1 / 6 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #FvGrdLn0 {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 6 / 1 / 7 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #Cntnr4 {
+                                                    position: relative;
+                                                    margin: 5px 0px 34px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 7 / 1 / 8 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #WRchTxto {
+                                                    position: relative;
+                                                    margin: 0px 0px 29px calc((100% - 980px) * 0.5);
+                                                    left: 171px;
+                                                    grid-area: 7 / 1 / 8 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #FvGrdLn3 {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 8 / 1 / 9 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #Cntnri {
+                                                    position: relative;
+                                                    margin: 4px 0px 13px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 9 / 1 / 10 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnisof {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 171px;
+                                                    grid-area: 9 / 1 / 10 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #FvGrdLn2 {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 10 / 1 / 11 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnn6zu {
+                                                    position: relative;
+                                                    margin: 5px 0px 18px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 11 / 1 / 12 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnls69 {
+                                                    position: relative;
+                                                    margin: 0px 0px 13px calc((100% - 980px) * 0.5);
+                                                    left: 172px;
+                                                    grid-area: 11 / 1 / 12 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnls5y {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 12 / 1 / 13 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnrm9g {
+                                                    position: relative;
+                                                    margin: 5px 0px 17px calc((100% - 980px) * 0.5);
+                                                    left: 29px;
+                                                    grid-area: 13 / 1 / 14 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnrm8w {
+                                                    position: relative;
+                                                    margin: 0px 0px 12px calc((100% - 980px) * 0.5);
+                                                    left: 171px;
+                                                    grid-area: 13 / 1 / 14 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnrm96 {
+                                                    position: relative;
+                                                    margin: 0px 0px 8px calc((100% - 980px) * 0.5);
+                                                    left: 28px;
+                                                    grid-area: 14 / 1 / 15 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnzf16 {
+                                                    position: relative;
+                                                    margin: 5px 0px 13px calc((100% - 980px) * 0.5);
+                                                    left: 31px;
+                                                    grid-area: 15 / 1 / 16 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnzf0f {
+                                                    position: relative;
+                                                    margin: 0px 0px 8px calc((100% - 980px) * 0.5);
+                                                    left: 173px;
+                                                    grid-area: 15 / 1 / 16 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k5qnzf0q {
+                                                    position: relative;
+                                                    margin: 0px 0px 7px calc((100% - 980px) * 0.5);
+                                                    left: 30px;
+                                                    grid-area: 16 / 1 / 17 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7p62c {
+                                                    position: relative;
+                                                    margin: 13px 0px 25px calc((100% - 980px) * 0.5);
+                                                    left: 33px;
+                                                    grid-area: 17 / 1 / 18 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7p62r {
+                                                    position: relative;
+                                                    margin: 0px 0px 9px calc((100% - 980px) * 0.5);
+                                                    left: 175px;
+                                                    grid-area: 17 / 1 / 18 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7p638 {
+                                                    position: relative;
+                                                    margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+                                                    left: 32px;
+                                                    grid-area: 18 / 1 / 19 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7x918 {
+                                                    position: relative;
+                                                    margin: 13px 0px 13px calc((100% - 980px) * 0.5);
+                                                    left: 35px;
+                                                    grid-area: 19 / 1 / 20 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7x91p {
+                                                    position: relative;
+                                                    margin: 0px 0px 16px calc((100% - 980px) * 0.5);
+                                                    left: 177px;
+                                                    grid-area: 19 / 1 / 20 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c7x927 {
+                                                    position: relative;
+                                                    margin: 0px 0px 4px calc((100% - 980px) * 0.5);
+                                                    left: 34px;
+                                                    grid-area: 20 / 1 / 21 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c828og {
+                                                    position: relative;
+                                                    margin: 1px 0px 12px calc((100% - 980px) * 0.5);
+                                                    left: 38px;
+                                                    grid-area: 21 / 1 / 22 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c828p0 {
+                                                    position: relative;
+                                                    margin: 0px 0px 22px calc((100% - 980px) * 0.5);
+                                                    left: 180px;
+                                                    grid-area: 21 / 1 / 22 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c828pi {
+                                                    position: relative;
+                                                    margin: 0px 0px 20px calc((100% - 980px) * 0.5);
+                                                    left: 37px;
+                                                    grid-area: 22 / 1 / 23 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c84l10 {
+                                                    position: relative;
+                                                    margin: 5px 0px 26px calc((100% - 980px) * 0.5);
+                                                    left: 42px;
+                                                    grid-area: 23 / 1 / 24 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c84l1m {
+                                                    position: relative;
+                                                    margin: 0px 0px 21px calc((100% - 980px) * 0.5);
+                                                    left: 184px;
+                                                    grid-area: 23 / 1 / 24 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #comp-k6c84l2f {
+                                                    position: relative;
+                                                    margin: 0px 0px 0 calc((100% - 980px) * 0.5);
+                                                    left: 41px;
+                                                    grid-area: 24 / 1 / 25 / 2;
+                                                    justify-self: start;
+                                                    align-self: start;
+                                                }
+
+                                                #c24skinlineContent-wedge-3 {
+                                                    visibility: hidden;
+                                                    height: 250px;
+                                                    width: 0;
+                                                    grid-area: 1 / 1 / 3 / 2;
+                                                }
+
+                                                #c24skcenteredContent {
+                                                    position: relative;
+                                                }
+
+                                                #c24skinlineContent-gridContainer>* {
+                                                    pointer-events: auto;
+                                                }
+
+                                                #c24skinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                    pointer-events: none;
+                                                }
+
+                                                #c24skinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                    pointer-events: auto;
+                                                }
+                                            </style>
+                                            <div id="c24skinlineContent-gridWrapper" data-mesh-internal="true">
+                                                <div id="c24skinlineContent-gridContainer" data-mesh-internal="true">
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="Cntnr6">
+                                                        <div id="Cntnr6bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="Cntnr6inlineContent">
+                                                            <style id="Cntnr6-mesh-styles">
+                                                                #Cntnr6inlineContent {
+                                                                    height: auto;
+                                                                    width: 920px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr6inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr6inlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #WRchTxtp {
+                                                                    position: relative;
+                                                                    margin: 28px 0px 26px 0;
+                                                                    left: 37px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #Cntnr6centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr6inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #Cntnr6inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr6inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="Cntnr6inlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="Cntnr6inlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div data-packed="true"
+                                                                        style="top:;bottom:;left:;right:;width:555px;height:auto;position:;pointer-events:none"
+                                                                        class="txtNew" id="WRchTxtp">
+                                                                        <h2 class="font_2">PROJECTS</h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:907px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="WRchTxtn">
+                                                        <h5 style="line-height:1.2em;" class="font_5"><span
+                                                                style="line-height:1.2em;">Latest Projects</span></h5>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:920px;height:5px;position:"
+                                                        class="hl1" id="FvGrdLn1"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="Cntnr5">
+                                                        <div id="Cntnr5bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="Cntnr5inlineContent">
+                                                            <style id="Cntnr5-mesh-styles">
+                                                                #Cntnr5inlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr5inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr5inlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #WPht4 {
+                                                                    position: relative;
+                                                                    margin: 14px 0px 16px 0;
+                                                                    left: 22px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #Cntnr5centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr5inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #Cntnr5inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr5inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="Cntnr5inlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="Cntnr5inlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="wp2" id="WPht4">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="WPht4link" class="wp2link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;c1q2y&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_b26bfd6c58514d8694e87e589632e628~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:360,&quot;height&quot;:360,&quot;alt&quot;:&quot;unnamed.webp&quot;,&quot;name&quot;:&quot;unnamed.webp&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;WPht4&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false" id="WPht4img"
+                                                                                class="wp2img"><img id="WPht4imgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="unnamed.webp" data-type="image"
+                                                                                    itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/trainer.webp" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="WRchTxte">
+                                                        <p class="font_8" style="line-height:1.6em;"><span><span
+                                                                    class="color_19">React Native mobile application(for
+                                                                    Trainer)</span> </span></p>
+
+                                                        <p class="font_8">For: AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2019</p>
+
+                                                        <p class="font_8">Release: Android</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://play.google.com/store/apps/details?id=com.smatt.sendmeatrainer"
+                                                                    target="_blank"
+                                                                    data-content="http://play.google.com/store/apps/details?id=com.smatt.sendmeatrainer"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">play.google.com/store/apps/details?id=com.smatt.sendmeatrainer</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:920px;height:5px;position:"
+                                                        class="hl1" id="FvGrdLn0"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="Cntnr4">
+                                                        <div id="Cntnr4bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="Cntnr4inlineContent">
+                                                            <style id="Cntnr4-mesh-styles">
+                                                                #Cntnr4inlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr4inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr4inlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #WPht3 {
+                                                                    position: relative;
+                                                                    margin: 18px 0px 17px 0;
+                                                                    left: 19px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #Cntnr4centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #Cntnr4inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #Cntnr4inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #Cntnr4inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="Cntnr4inlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="Cntnr4inlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:62px;height:55px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="55" class="wp2" id="WPht3">
+                                                                        <div style="width:62px;height:55px"
+                                                                            id="WPht3link" class="wp2link">
+                                                                            <tag-image
+                                                                                style="width:62px;height:55px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;c12pi&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_efd455b2870045a497d523063b55e6a1~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:360,&quot;height&quot;:360,&quot;alt&quot;:&quot;unnamed (2).webp&quot;,&quot;name&quot;:&quot;unnamed (2).webp&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;WPht3&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false" id="WPht3img"
+                                                                                class="wp2img"><img id="WPht3imgimage"
+                                                                                    style="object-position:50% 50%;width:62px;height:55px;object-fit:cover"
+                                                                                    alt="unnamed (2).webp"
+                                                                                    data-type="image" itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/user.webp" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="WRchTxto">
+                                                        <p class="font_8" style="line-height:1.6em;"><span
+                                                                class="color_19">React Native mobile application(Send Me
+                                                                a Trainer)</span></p>
+
+                                                        <p class="font_8">For: AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2019</p>
+
+                                                        <p class="font_8">Release: Android</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="https://play.google.com/store/apps/details?id=com.smat.user2019"
+                                                                    target="_blank"
+                                                                    data-content="https://play.google.com/store/apps/details?id=com.smat.user2019"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">https://play.google.com/store/apps/details?id=com.smat.user2019</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:920px;height:5px;position:"
+                                                        class="hl1" id="FvGrdLn3"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="Cntnri">
+                                                        <div id="Cntnribg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="CntnriinlineContent">
+                                                            <style id="Cntnri-mesh-styles">
+                                                                #CntnriinlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #CntnriinlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #CntnriinlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k5qni3jl {
+                                                                    position: relative;
+                                                                    margin: 15px 0px 15px 0;
+                                                                    left: 22px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #CntnricenteredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #CntnriinlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #CntnriinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #CntnriinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="CntnriinlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="CntnriinlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="wp2"
+                                                                        id="comp-k5qni3jl">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="comp-k5qni3jllink" class="wp2link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k5qni3kb&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_b26bfd6c58514d8694e87e589632e628~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:360,&quot;height&quot;:360,&quot;alt&quot;:&quot;unnamed.webp&quot;,&quot;name&quot;:&quot;unnamed.webp&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k5qni3jl&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k5qni3jlimg" class="wp2img">
+                                                                                <img id="comp-k5qni3jlimgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="unnamed.webp" data-type="image"
+                                                                                    itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/trainer.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k5qnisof">
+                                                        <p class="font_8" style="line-height:1.6em;"><span><span
+                                                                    class="color_19">React Native mobile application(for
+                                                                    Trainer)</span> </span></p>
+
+                                                        <p class="font_8">For: AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2019</p>
+
+                                                        <p class="font_8">Release: iOS</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://apps.apple.com/us/app/smat-for-trainers/id1414457549"
+                                                                    target="_blank"
+                                                                    data-content="http://apps.apple.com/us/app/smat-for-trainers/id1414457549"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">apps.apple.com/us/app/smat-for-trainers/id1414457549</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="FvGrdLn2"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k5qnn6zu">
+                                                        <div id="comp-k5qnn6zubg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k5qnn6zuinlineContent">
+                                                            <style id="comp-k5qnn6zu-mesh-styles">
+                                                                #comp-k5qnn6zuinlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnn6zuinlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnn6zuinlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k5qnn71n {
+                                                                    position: relative;
+                                                                    margin: 15px 0px 15px 0;
+                                                                    left: 22px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #comp-k5qnn6zucenteredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnn6zuinlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k5qnn6zuinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnn6zuinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="comp-k5qnn6zuinlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="comp-k5qnn6zuinlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="wp2"
+                                                                        id="comp-k5qnn71n">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="comp-k5qnn71nlink" class="wp2link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k5qnn71r&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_138bdc62e512402ab5e2afdbcbbb742f~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:230,&quot;height&quot;:230,&quot;alt&quot;:&quot;230x0w.png&quot;,&quot;name&quot;:&quot;230x0w.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k5qnn71n&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k5qnn71nimg" class="wp2img">
+                                                                                <img id="comp-k5qnn71nimgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="230x0w.png" data-type="image"
+                                                                                    itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/intelli.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k5qnls69">
+                                                        <p class="font_8" style="line-height:1.6em;"><span><span
+                                                                    class="color_19">Swift mobile application</span>
+                                                            </span></p>
+
+                                                        <p class="font_8">For: AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2018 - 2019</p>
+
+                                                        <p class="font_8">Release: iOS</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://apps.apple.com/us/app/intellispex/id1470941146"
+                                                                    target="_blank"
+                                                                    data-content="http://apps.apple.com/us/app/intellispex/id1470941146"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">apps.apple.com/us/app/intellispex/id1470941146</a><a
+                                                                    href="http://apps.apple.com/us/app/intellispex/id1470941146"
+                                                                    target="_blank"
+                                                                    data-content="http://apps.apple.com/us/app/intellispex/id1470941146"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">apps.apple.com/us/app/intellispex/id1470941146</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k5qnls5y"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k5qnrm9g">
+                                                        <div id="comp-k5qnrm9gbg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k5qnrm9ginlineContent">
+                                                            <style id="comp-k5qnrm9g-mesh-styles">
+                                                                #comp-k5qnrm9ginlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnrm9ginlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnrm9ginlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k5qnrmch {
+                                                                    position: relative;
+                                                                    margin: 15px 0px 15px 0;
+                                                                    left: 22px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #comp-k5qnrm9gcenteredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnrm9ginlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k5qnrm9ginlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnrm9ginlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="comp-k5qnrm9ginlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="comp-k5qnrm9ginlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="wp2"
+                                                                        id="comp-k5qnrmch">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="comp-k5qnrmchlink" class="wp2link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k5qnrmck&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_28853d0e11944322979df52950e8d2d7~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:324,&quot;height&quot;:244,&quot;alt&quot;:&quot;Screen Shot 1398-11-03 at 15.08.32.png&quot;,&quot;name&quot;:&quot;Screen Shot 1398-11-03 at 15.08.32.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k5qnrmch&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k5qnrmchimg" class="wp2img">
+                                                                                <img id="comp-k5qnrmchimgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="Screen Shot 1398-11-03 at 15.08.32.png"
+                                                                                    data-type="image" itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/sukhi.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k5qnrm8w">
+                                                        <p class="font_8" style="line-height:1.6em;"><span><span
+                                                                    class="color_19">Reactjs</span> </span></p>
+
+                                                        <p class="font_8">For: AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2018</p>
+
+                                                        <p class="font_8">Release: Web</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://sukhi.webcentriq.com/" target="_blank"
+                                                                    data-content="http://sukhi.webcentriq.com/"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">sukhi.webcentriq.com/</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k5qnrm96"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k5qnzf16">
+                                                        <div id="comp-k5qnzf16bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k5qnzf16inlineContent">
+                                                            <style id="comp-k5qnzf16-mesh-styles">
+                                                                #comp-k5qnzf16inlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnzf16inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnzf16inlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k5qnzf45 {
+                                                                    position: relative;
+                                                                    margin: 15px 0px 15px 0;
+                                                                    left: 23px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #comp-k5qnzf16centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k5qnzf16inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k5qnzf16inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k5qnzf16inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="comp-k5qnzf16inlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="comp-k5qnzf16inlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="style-k5qo2ux9"
+                                                                        id="comp-k5qnzf45">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="comp-k5qnzf45link"
+                                                                            class="style-k5qo2ux9link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k5qnzf48&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_10996af8c25a4273880a03724b0f22e5~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:73,&quot;height&quot;:89,&quot;alt&quot;:&quot;logo-offplus.png&quot;,&quot;name&quot;:&quot;logo-offplus.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k5qnzf45&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k5qnzf45img"
+                                                                                class="style-k5qo2ux9img"><img
+                                                                                    id="comp-k5qnzf45imgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="logo-offplus.png"
+                                                                                    data-type="image" itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/offplus.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k5qnzf0f">
+                                                        <p class="font_8" style="line-height:1.6em;"><span><span
+                                                                    class="color_19">React Native Offplus</span></span>
+                                                        </p>
+
+                                                        <p class="font_8">For: AppTech(Freelancer)</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2018</p>
+
+                                                        <p class="font_8">Release: iOS/Android</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://offplus.ir/" target="_blank"
+                                                                    data-content="http://offplus.ir/"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">offplus.ir/</a></span></p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k5qnzf0q"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k6c7p62c">
+                                                        <div id="comp-k6c7p62cbg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k6c7p62cinlineContent">
+                                                            <style id="comp-k6c7p62c-mesh-styles">
+                                                                #comp-k6c7p62cinlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c7p62cinlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c7p62cinlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k6c7p64s {
+                                                                    position: relative;
+                                                                    margin: 15px 0px 15px 0;
+                                                                    left: 23px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #comp-k6c7p62ccenteredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c7p62cinlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k6c7p62cinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c7p62cinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="comp-k6c7p62cinlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="comp-k6c7p62cinlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:55px;height:60px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="60" class="style-k5qo2ux9"
+                                                                        id="comp-k6c7p64s">
+                                                                        <div style="width:55px;height:60px"
+                                                                            id="comp-k6c7p64slink"
+                                                                            class="style-k5qo2ux9link">
+                                                                            <tag-image
+                                                                                style="width:55px;height:60px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k6c7p64x&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_547652336d784387b6775606584278ff~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:763,&quot;height&quot;:364,&quot;alt&quot;:&quot;logo.png&quot;,&quot;name&quot;:&quot;logo.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k6c7p64s&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k6c7p64simg"
+                                                                                class="style-k5qo2ux9img"><img
+                                                                                    id="comp-k6c7p64simgimage"
+                                                                                    style="object-position:50% 50%;width:55px;height:60px;object-fit:cover"
+                                                                                    alt="logo.png" data-type="image"
+                                                                                    itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/mikrofirewall.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k6c7p62r">
+                                                        <p class="font_8" style="line-height:1.6em;"><span
+                                                                class="color_19">Reactjs and Node.js</span></p>
+
+                                                        <p class="font_8">For: Mikrotik</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2018</p>
+
+                                                        <p class="font_8">Release: React.js/Node.js</p>
+
+                                                        <p class="font_8">Link :&nbsp;<object height="0"><a
+                                                                    class="auto-generated-link"
+                                                                    data-auto-recognition="true"
+                                                                    data-content="https://mikrotik.com/mfm/software"
+                                                                    href="https://mikrotik.com/mfm/software"
+                                                                    target="_blank"
+                                                                    data-type="external">https://mikrotik.com/mfm/software</a></object>
+                                                        </p>
+
+                                                        <p class="font_8">Link :&nbsp;<object height="0"><a
+                                                                    class="auto-generated-link"
+                                                                    data-auto-recognition="true"
+                                                                    data-content="https://mikrofirewall.com/"
+                                                                    href="https://mikrofirewall.com/" target="_blank"
+                                                                    data-type="external">https://mikrofirewall.com/</a></object>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k6c7p638"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k6c7x918">
+                                                        <div id="comp-k6c7x918bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k6c7x918inlineContent">
+                                                            <style id="comp-k6c7x918-mesh-styles">
+                                                                #comp-k6c7x918inlineContent {
+                                                                    height: auto;
+                                                                    width: 100px;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c7x918inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c7x918inlineContent-gridContainer {
+                                                                    position: static;
+                                                                    display: grid;
+                                                                    height: auto;
+                                                                    width: 100%;
+                                                                    min-height: auto;
+                                                                    grid-template-rows: 1fr;
+                                                                    grid-template-columns: 100%;
+                                                                }
+
+                                                                #comp-k6c7x94d {
+                                                                    position: relative;
+                                                                    margin: 18px 0px 26px 0;
+                                                                    left: 28px;
+                                                                    grid-area: 1 / 1 / 2 / 2;
+                                                                    justify-self: start;
+                                                                    align-self: start;
+                                                                }
+
+                                                                #comp-k6c7x918centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c7x918inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k6c7x918inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c7x918inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                            <div id="comp-k6c7x918inlineContent-gridWrapper"
+                                                                data-mesh-internal="true">
+                                                                <div id="comp-k6c7x918inlineContent-gridContainer"
+                                                                    data-mesh-internal="true">
+                                                                    <div style="top:;bottom:;left:;right:;width:43px;height:46px;position:"
+                                                                        title="" data-is-responsive="false"
+                                                                        data-display-mode="fill"
+                                                                        data-content-padding-horizontal="0"
+                                                                        data-content-padding-vertical="0"
+                                                                        data-exact-height="46" class="style-k5qo2ux9"
+                                                                        id="comp-k6c7x94d">
+                                                                        <div style="width:43px;height:46px"
+                                                                            id="comp-k6c7x94dlink"
+                                                                            class="style-k5qo2ux9link">
+                                                                            <tag-image
+                                                                                style="width:43px;height:46px;top:0;left:0"
+                                                                                data-has-bg-scroll-effect=""
+                                                                                data-image-info="{&quot;imageData&quot;:{&quot;type&quot;:&quot;Image&quot;,&quot;id&quot;:&quot;dataItem-k6c7x94i&quot;,&quot;metaData&quot;:{&quot;pageId&quot;:&quot;c24sk&quot;,&quot;isPreset&quot;:false,&quot;schemaVersion&quot;:&quot;2.0&quot;,&quot;isHidden&quot;:false},&quot;title&quot;:&quot;&quot;,&quot;uri&quot;:&quot;c19179_a22cd653f2c54c6bb99280e96aac6324~mv2.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;width&quot;:120,&quot;height&quot;:109,&quot;alt&quot;:&quot;2af9743eb65ffcec54007bb85dd161a3.png&quot;,&quot;name&quot;:&quot;2af9743eb65ffcec54007bb85dd161a3.png&quot;,&quot;displayMode&quot;:&quot;fill&quot;},&quot;containerId&quot;:&quot;comp-k6c7x94d&quot;,&quot;displayMode&quot;:&quot;fill&quot;}"
+                                                                                data-has-ssr-src="true"
+                                                                                data-is-svg="false"
+                                                                                id="comp-k6c7x94dimg"
+                                                                                class="style-k5qo2ux9img"><img
+                                                                                    id="comp-k6c7x94dimgimage"
+                                                                                    style="object-position:50% 50%;width:43px;height:46px;object-fit:cover"
+                                                                                    alt="2af9743eb65ffcec54007bb85dd161a3.png"
+                                                                                    data-type="image" itemProp="image"
+                                                                                    src="http://saeedkargosha.github.io/larax.jpg" />
+                                                                            </tag-image>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k6c7x91p">
+                                                        <p class="font_8" style="line-height:1.6em;"><span
+                                                                class="color_19">SSR with Reactjs project</span></p>
+
+                                                        <p class="font_8">For:&nbsp;AppTech</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2019</p>
+
+                                                        <p class="font_8">Release: React.js</p>
+
+                                                        <p class="font_8">Link :&nbsp;<object height="0"><a
+                                                                    class="auto-generated-link"
+                                                                    data-auto-recognition="true"
+                                                                    data-content="https://larax.co/"
+                                                                    href="https://larax.co/" target="_blank"
+                                                                    data-type="external">https://larax.co/</a></object>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k6c7x927"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k6c828og">
+                                                        <div id="comp-k6c828ogbg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k6c828oginlineContent">
+                                                            <style id="comp-k6c828og-mesh-styles">
+                                                                #comp-k6c828oginlineContent {
+                                                                    height: 90px;
+                                                                    width: 100px;
+                                                                    min-height: ;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c828ogcenteredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c828oginlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c828oginlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k6c828oginlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c828oginlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k6c828p0">
+                                                        <p class="font_8" style="line-height:1.6em;"><span
+                                                                class="color_19">React native ,&nbsp;Ble manager and
+                                                                Golang</span></p>
+
+                                                        <p class="font_8">For:&nbsp;Seynergy</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2020</p>
+
+                                                        <p class="font_8">Release: coming soon</p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k6c828pi"></div>
+                                                    <div style="top:;bottom:;left:;right:;position:" class="c1"
+                                                        id="comp-k6c84l10">
+                                                        <div id="comp-k6c84l10bg" class="c1bg"></div>
+                                                        <div class="c1inlineContent" id="comp-k6c84l10inlineContent">
+                                                            <style id="comp-k6c84l10-mesh-styles">
+                                                                #comp-k6c84l10inlineContent {
+                                                                    height: 90px;
+                                                                    width: 100px;
+                                                                    min-height: ;
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c84l10centeredContent {
+                                                                    position: relative;
+                                                                }
+
+                                                                #comp-k6c84l10inlineContent-gridWrapper {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c84l10inlineContent-gridContainer>* {
+                                                                    pointer-events: auto;
+                                                                }
+
+                                                                #comp-k6c84l10inlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                                                    pointer-events: none;
+                                                                }
+
+                                                                #comp-k6c84l10inlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                                                    pointer-events: auto;
+                                                                }
+                                                            </style>
+                                                        </div>
+                                                    </div>
+                                                    <div data-packed="true"
+                                                        style="top:;bottom:;left:;right:;width:720px;height:auto;position:;pointer-events:none"
+                                                        class="txtNew" id="comp-k6c84l1m">
+                                                        <p class="font_8" style="line-height:1.6em;"><span
+                                                                class="color_19">Rewrite with React native -
+                                                                WordMaster</span></p>
+
+                                                        <p class="font_8">For:&nbsp;ZabanShar</p>
+
+                                                        <p class="font_8">Date:&nbsp;December 2020</p>
+
+                                                        <p class="font_8">Release: coming soon</p>
+
+                                                        <p class="font_8">Link :&nbsp;<span
+                                                                style="text-decoration:underline;"><a
+                                                                    href="http://sirjanesol.ir/" target="_blank"
+                                                                    data-content="http://sirjanesol.ir/"
+                                                                    data-type="external"
+                                                                    rel="nofollow noopener">http://sirjanesol.ir/</a></span>
+                                                        </p>
+                                                    </div>
+                                                    <div data-border-width="1px"
+                                                        style="transform-origin:center 0.5px;top:;bottom:;left:;right:;width:921px;height:5px;position:"
+                                                        class="hl1" id="comp-k6c84l2f"></div>
+                                                    <div id="c24skinlineContent-wedge-3" data-mesh-internal="true">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <footer style="bottom:auto;left:0;margin-left:0;width:100%;min-width:980px;top:;right:;position:"
+                        class="fc1_footer fc1" tabindex="-1" data-site-width="980" data-fixedposition="false"
+                        data-isrunninginmobile="false" data-state=" " id="SITE_FOOTER">
+                        <div style="left:0;width:100%" id="SITE_FOOTERscreenWidthBackground"
+                            class="fc1screenWidthBackground"></div>
+                        <div style="width:100%" id="SITE_FOOTERcenteredContent" class="fc1centeredContent">
+                            <div style="margin-left:calc((100% - 980px) / 2);width:980px" id="SITE_FOOTERbg"
+                                class="fc1bg"></div>
+                            <div id="SITE_FOOTERinlineContent" class="fc1inlineContent">
+                                <style id="SITE_FOOTER-mesh-styles">
+                                    #SITE_FOOTERinlineContent {
+                                        height: 20px;
+                                        width: 100%;
+                                        min-height: ;
+                                        position: relative;
+                                    }
+
+                                    #SITE_FOOTERcenteredContent {
+                                        position: relative;
+                                    }
+
+                                    #SITE_FOOTERinlineContent-gridWrapper {
+                                        pointer-events: none;
+                                    }
+
+                                    #SITE_FOOTERinlineContent-gridContainer>* {
+                                        pointer-events: auto;
+                                    }
+
+                                    #SITE_FOOTERinlineContent-gridContainer>[id$="-rotated-wrapper"] {
+                                        pointer-events: none;
+                                    }
+
+                                    #SITE_FOOTERinlineContent-gridContainer>[id$="-rotated-wrapper"]>* {
+                                        pointer-events: auto;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <div id="aspectCompsContainer" class="siteAspectsContainer">
+                <div style="position:absolute" id="popoverLayer"></div>
+            </div>
+            <div id="SCROLL_TO_BOTTOM" tabindex="-1" aria-label="bottom of page" role="region" style="height:0"></div>
+            
+        </div>
+        <div class="font-ruler-container"
+            style="overflow:hidden;visibility:hidden;max-height:0;max-width:0;position:absolute">
+            <style>
+                .font-ruler-content::after {
+                    content: "@#$%%^&*~IAO"
+                }
+            </style>
+            <div style="position:absolute;overflow:hidden;font-size:1200px;left:-2000px;visibility:hidden">
+                <div style="position:relative;white-space:nowrap;font-family:serif">
+                    <div style="position:absolute;width:100%;height:100%;overflow:hidden">
+                        <div></div>
+                    </div><span class="font-ruler-content"></span>
+                </div>
+            </div>
+            <div style="position:absolute;overflow:hidden;font-size:1200px;left:-2000px;visibility:hidden">
+                <div style="position:relative;white-space:nowrap;font-family:serif">
+                    <div style="position:absolute;width:100%;height:100%;overflow:hidden">
+                        <div></div>
+                    </div><span class="font-ruler-content"></span>
+                </div>
+            </div>
+            <div style="position:absolute;overflow:hidden;font-size:1200px;left:-2000px;visibility:hidden">
+                <div style="position:relative;white-space:nowrap;font-family:serif">
+                    <div style="position:absolute;width:100%;height:100%;overflow:hidden">
+                        <div></div>
+                    </div><span class="font-ruler-content"></span>
+                </div>
+            </div>
+            <div style="position:absolute;overflow:hidden;font-size:1200px;left:-2000px;visibility:hidden">
+                <div style="position:relative;white-space:nowrap;font-family:serif">
+                    <div style="position:absolute;width:100%;height:100%;overflow:hidden">
+                        <div></div>
+                    </div><span class="font-ruler-content"></span>
+                </div>
+            </div>
+            <div style="position:absolute;overflow:hidden;font-size:1200px;left:-2000px;visibility:hidden">
+                <div style="position:relative;white-space:nowrap;font-family:serif">
+                    <div style="position:absolute;width:100%;height:100%;overflow:hidden">
+                        <div></div>
+                    </div><span class="font-ruler-content"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
