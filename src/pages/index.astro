@@ -1,0 +1,39 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { GITHUB_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Hi, I'm Saeed 👋</h1>
+			<p>
+				I'm a software engineer. I'm learning about AI: LLMs, agents, and the harnesses around them.
+				This site is where I share what I build and what I learn along the way.
+			</p>
+			<p>
+				Right now my main project is my <strong>second brain</strong>. It runs on
+				<a href="https://github.com/openclaw/openclaw">OpenClaw</a> and connects Notion, Obsidian,
+				Google, and Anki. Different agents and skills handle things like todos, finances, taxes, and
+				travel planning.
+			</p>
+			<h2>Start here</h2>
+			<ul>
+				<li>
+					<a href="/blog/second-brain-with-openclaw/">How I set up my second brain with OpenClaw</a>
+				</li>
+				<li><a href="/blog">All posts</a></li>
+				<li><a href="/about">About me</a></li>
+				<li><a href={GITHUB_URL}>My GitHub</a></li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
