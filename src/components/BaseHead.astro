@@ -32,7 +32,17 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
-<Font cssVariable="--font-atkinson" preload />
+<Font cssVariable="--font-inter" preload />
+<Font cssVariable="--font-mono" />
+
+<!-- Apply the saved theme before first paint to avoid a flash -->
+<script is:inline>
+	(function () {
+		var saved = localStorage.getItem('theme');
+		var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+	})();
+</script>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -50,3 +60,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image.src, Astro.url)} />

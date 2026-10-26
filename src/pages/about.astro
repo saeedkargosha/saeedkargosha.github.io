@@ -1,15 +1,9 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Page from '../layouts/Page.astro';
 ---
 
-<Layout
-	title="About me"
-	description="Saeed Kargosha, software engineer interested in AI agents."
-	pubDate={new Date('2026-10-26')}
->
-	<p>
-		Hi, I'm Saeed Kargosha. I'm a software engineer living in Munich, Germany.
-	</p>
+<Page title="About me" description="Saeed Kargosha, software engineer interested in AI agents.">
+	<p>Hi, I'm Saeed Kargosha. I'm a software engineer living in Munich, Germany.</p>
 
 	<h2>What I'm into</h2>
 	<ul>
@@ -28,7 +22,5 @@ import Layout from '../layouts/BlogPost.astro';
 	<p>I play padel, I'm curious about psychology, and I'm learning German.</p>
 
 	<h2>Contact</h2>
-	<p>
-		You can find me on <a href="https://github.com/saeedkargosha">GitHub</a>.
-	</p>
-</Layout>
+	<p>You can find me on <a href="https://github.com/saeedkargosha">GitHub</a>.</p>
+</Page>

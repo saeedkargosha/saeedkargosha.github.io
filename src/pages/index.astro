@@ -1,35 +1,135 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import Base from '../layouts/Base.astro';
 import { GITHUB_URL, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Hi, I'm Saeed 👋</h1>
-			<p>
-				I'm a software engineer. I'm learning about AI: LLMs, agents, and the harnesses around them.
-				This site is where I share what I build and what I learn along the way.
-			</p>
-			<p>
-				Right now my main project is my <strong>second brain</strong>. It runs on
-				<a href="https://github.com/openclaw/openclaw">OpenClaw</a> and connects Notion, Obsidian,
-				Google, and Anki. Different agents and skills handle things like todos, finances, taxes, and
-				travel planning.
-			</p>
-			<h2>Start here</h2>
-			<ul>
-				<li><a href="/about">About me</a></li>
-				<li><a href={GITHUB_URL}>My GitHub</a></li>
-			</ul>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Base title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<div>
+					<span class="badge"><span class="dot"></span> Software engineer · Learning in public</span>
+					<h1>
+						Building a <span class="gradient-text">second brain</span> with AI agents.
+					</h1>
+					<p class="lead">
+						Hi, I'm Saeed. I'm learning about LLMs, agents, and the harnesses around them. This site
+						is where I share what I build, what works, and what does not.
+					</p>
+					<div class="hero-actions">
+						<a class="btn primary" href="/blog">Read the blog</a>
+						<a class="btn" href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
+					</div>
+				</div>
+				<!-- Replace the initials with <img src="..." alt="Saeed Kargosha" /> when the photo is ready -->
+				<div class="avatar" aria-hidden="true">SK</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<div class="section-head">
+					<p class="eyebrow">Now</p>
+					<h2>What I'm working on</h2>
+				</div>
+				<div class="grid-3">
+					<div class="card">
+						<div class="icon">🧠</div>
+						<h3>My second brain</h3>
+						<p>
+							Todos, finances, trips, and tax records live in Notion. An agent with skills keeps
+							them tidy and helps me act on them.
+						</p>
+					</div>
+					<div class="card">
+						<div class="icon">🧩</div>
+						<h3>Skills, not giant prompts</h3>
+						<p>
+							One short skill per job. When the agent makes a mistake, I fix the skill once and it
+							is fixed for good.
+						</p>
+					</div>
+					<div class="card">
+						<div class="icon">🎙️</div>
+						<h3>Voice assistant <span class="tag">Planned</span></h3>
+						<p>A hands-free "Hey OpenClaw" assistant running on a Raspberry Pi.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<div class="section-head">
+					<p class="eyebrow">The setup</p>
+					<h2>How it fits together</h2>
+					<p>
+						<a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener">OpenClaw</a>{' '}
+						is the brain. Each tool has one job.
+					</p>
+				</div>
+				<div class="stack">
+					<div class="grid-4">
+						<div class="card">
+							<div class="icon">🗂️</div>
+							<h3>Notion</h3>
+							<p>Structured data</p>
+						</div>
+						<div class="card">
+							<div class="icon">📓</div>
+							<h3>Obsidian</h3>
+							<p>Learning notes</p>
+						</div>
+						<div class="card">
+							<div class="icon">📬</div>
+							<h3>Google</h3>
+							<p>Mail and calendar</p>
+						</div>
+						<div class="card">
+							<div class="icon">🃏</div>
+							<h3>Anki</h3>
+							<p>Flashcards</p>
+						</div>
+					</div>
+					<p class="stack-connector">▲ ▲ ▲ ▲</p>
+					<div class="stack-core">🦞 OpenClaw · agent, skills, memory</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="container">
+				<div class="section-head">
+					<p class="eyebrow">Writing</p>
+					<h2>Latest posts</h2>
+				</div>
+				{
+					posts.length > 0 ? (
+						<ul class="post-list">
+							{posts.map((post) => (
+								<li class="post-item">
+									<a href={`/blog/${post.id}/`}>
+										<FormattedDate date={post.data.pubDate} />
+										<h3>{post.data.title}</h3>
+										<p>{post.data.description}</p>
+									</a>
+								</li>
+							))}
+						</ul>
+					) : (
+						<div class="empty">
+							<strong>The first post is on its way.</strong>
+							It will be about how I set up my second brain with OpenClaw.
+						</div>
+					)
+				}
+			</div>
+		</section>
+	</main>
+</Base>
